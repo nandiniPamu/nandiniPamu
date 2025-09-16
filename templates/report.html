@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I want to report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Report an Incident</h1>
+        <p>Please provide as much detail as possible. Your report is confidential.</p>
+        <form action="/submit_report" method="post" enctype="multipart/form-data">
+            <textarea name="details" rows="10" cols="50" placeholder="Describe the incident..."></textarea>
+            <br>
+            <label for="screenshot">Upload a screenshot (optional):</label>
+            <input type="file" id="screenshot" name="screenshot">
+            <br>
+            <button type="submit" class="btn">Submit Report</button>
+        </form>
+    </div>
+</body>
+</html>
