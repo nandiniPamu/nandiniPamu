@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Analysis Result - SafeSpace{% endblock %}
+
+{% block content %}
+    <h1>Analysis Result</h1>
+    <div class="result-card">
+        <p class="label">Classification:</p>
+        <p class="value {{ classification|lower|replace(' ', '-') }}">{{ classification }}</p>
+
+        <p class="label">Advice:</p>
+        <p class="response">{{ response }}</p>
+    </div>
+    <div class="form-actions">
+        <a href="{{ url_for('main.talk') }}" class="btn btn-primary">Analyze Another Message</a>
+        <a href="{{ url_for('main.index') }}" class="btn btn-text">Go Home</a>
+    </div>
+{% endblock %}

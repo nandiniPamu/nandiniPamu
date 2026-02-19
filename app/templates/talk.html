@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}I Want to Talk - SafeSpace{% endblock %}
+
+{% block content %}
+    <h1>I Want to Talk</h1>
+    <p>Paste a message or conversation below to get an instant analysis.</p>
+    <form action="{{ url_for('main.analyze') }}" method="post" class="main-form">
+        <textarea name="message" rows="8" placeholder="Enter the message you want to analyze..."></textarea>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Analyze Message</button>
+            <a href="{{ url_for('main.index') }}" class="btn btn-text">Go Back</a>
+        </div>
+    </form>
+{% endblock %}
