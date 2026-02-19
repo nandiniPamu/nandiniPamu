@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I want to talk</title>
+    <title>Talk - SafeSpace</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>I want to talk</h1>
-        <p>Paste a message or conversation below to get an instant analysis.</p>
-        <form action="/analyze" method="post">
-            <textarea name="message" rows="10" cols="50" placeholder="Enter your message here..."></textarea>
-            <br>
-            <button type="submit" class="btn">Analyze</button>
-        </form>
+        <header>
+            <h1>I Want to Talk</h1>
+            <p>Paste a message or conversation below to get an instant analysis.</p>
+        </header>
+        <main>
+            <form action="{{ url_for('analyze') }}" method="post">
+                <textarea name="message" rows="8" placeholder="Enter your message here..." required></textarea>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-primary">Analyze Message</button>
+                    <a href="{{ url_for('index') }}" class="btn" style="color: #666;">Back</a>
+                </div>
+            </form>
+        </main>
     </div>
 </body>
 </html>

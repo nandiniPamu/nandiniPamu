@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analysis Result</title>
+    <title>Analysis Result - SafeSpace</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Analysis Result</h1>
-        <p><strong>Classification:</strong> {{ classification }}</p>
-        <p><strong>Response:</strong> {{ response }}</p>
-        <a href="/talk" class="btn">Analyze another message</a>
+        <header>
+            <h1>Analysis Result</h1>
+        </header>
+        <main>
+            <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: left;">
+                <p><strong>Classification:</strong> <span style="color: {{ 'red' if classification == 'Bullying' else 'green' }}">{{ classification }}</span></p>
+                <p><strong>SafeSpace Advice:</strong> {{ response }}</p>
+            </div>
+            <div class="buttons">
+                <a href="{{ url_for('talk') }}" class="btn btn-primary">Analyze Another</a>
+                <a href="{{ url_for('index') }}" class="btn" style="color: #666; border: 1px solid #ddd;">Home</a>
+            </div>
+        </main>
     </div>
 </body>
 </html>

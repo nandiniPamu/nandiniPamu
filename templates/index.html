@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberbullying Prevention System</title>
+    <title>SafeSpace - Cyberbullying Prevention</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Cyberbullying Prevention System</h1>
-        <p>Your safe space for support and action.</p>
-        <div class="buttons">
-            <a href="/talk" class="btn">I want to talk</a>
-            <a href="/report" class="btn">I want to report</a>
-        </div>
+        <header>
+            <h1>SafeSpace</h1>
+            <p>Your safe harbor for online support and incident reporting.</p>
+        </header>
+        <main>
+            <div class="buttons">
+                <a href="{{ url_for('talk') }}" class="btn btn-primary">I Want to Talk</a>
+                <a href="{{ url_for('report') }}" class="btn btn-secondary">I Want to Report</a>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2025 SafeSpace Project</p>
+        </footer>
     </div>
 </body>
 </html>
