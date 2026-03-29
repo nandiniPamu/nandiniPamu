@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}I Want to Report - SafeSpace{% endblock %}
+
+{% block content %}
+    <h1>Report an Incident</h1>
+    <p>Please provide as much detail as possible. Your report is confidential.</p>
+    <form action="{{ url_for('main.submit_report') }}" method="post" enctype="multipart/form-data" class="main-form">
+        <div class="form-group">
+            <label for="details">Incident Details</label>
+            <textarea id="details" name="details" rows="8" placeholder="Describe what happened..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="screenshot">Upload a screenshot (optional)</label>
+            <input type="file" id="screenshot" name="screenshot" class="file-input">
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-secondary">Submit Report</button>
+            <a href="{{ url_for('main.index') }}" class="btn btn-text">Go Back</a>
+        </div>
+    </form>
+{% endblock %}

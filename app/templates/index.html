@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home - SafeSpace{% endblock %}
+
+{% block content %}
+    <h1>Welcome to SafeSpace</h1>
+    <p class="subtitle">Your safe space for support and action against cyberbullying.</p>
+    <div class="hero-buttons">
+        <a href="{{ url_for('main.talk') }}" class="btn btn-primary">I Want to Talk</a>
+        <a href="{{ url_for('main.report') }}" class="btn btn-secondary">I Want to Report</a>
+    </div>
+{% endblock %}
